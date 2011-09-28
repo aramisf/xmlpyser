@@ -8,7 +8,7 @@ class Ranger(object):
 
         self.inputFileFP = open(inputFileFP, 'r')
         self.outputFileFP = open(outputFileFP,'w')
-        self.speedList = [ float(i.strip()) for i in self.inputFileFP.readlines() ]
+        self.speedList = [float(i.strip().replace(',','.')) for i in self.inputFileFP.readlines()]
 
         # Closing FP:
         self.inputFileFP.close()
