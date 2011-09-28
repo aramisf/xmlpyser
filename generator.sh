@@ -6,7 +6,7 @@ make_input_files() {
 for i in $@; do
 
     if [[ "$i" =~ .*.kml ]]; then
-        echo "grep '<name>.*km/h' $i|cut -d\~ -f2|tr -d ' '|sed 's/km\/h//' > ${i/.*.kml/.input}"
+        grep '<name>.*km/h' $i|cut -d\~ -f2|tr -d ' '|sed 's/km\/h//' > ${i/.*.kml/.input}
 
     else
         echo "Error, only .kml files allowed"
@@ -21,8 +21,8 @@ make_color_codes() {
 for i in $@; do
 
     if [[ "$i" =~ .*.input ]]; then
-        echo "./main.py $i"
-        echo "mv ${i/input/colorCodes} ${i/input/colorCodes.local}"
+        ./main.py $i
+        mv ${i/input/colorCodes} ${i/input/colorCodes.local}
 
     else
         echo "Error, only .input files allowed"
@@ -30,8 +30,10 @@ for i in $@; do
     fi
 done
 
-# Now make the global values:
-echo "./main.py $@"
+# Now make the global values if there is more than one entry:
+if (( ${#@} > 1 )); then
+    ./main.py $@
+fi
 
 }
 
