@@ -1,1 +1,40 @@
 Pequeno parser de arquivos [kx]ml.
+
+Os arquivos contidos aqui realizam a tarefa de recolorir um arquivo de mapa no
+formato KML, conforme as velocidades ja contidas no arquivo.
+
+Os exemplos para os quais este programa esta sendo escrito, sao provenientes do
+portal http://www.instamapper.com/ que armazena dados enviados de aplicativos
+moveis.
+
+Utilizando-se os arquivos exportados do site supracitado (especificamente no
+formato GPX), utilizamos um outro portal para gerar um arquivo KML contendo
+especificacoes de cor para cada uma das velocidades registradas. O sitio
+utilizado foi: http://www.maddyhome.com/igc2kml/convert.do
+
+A partir do arquivo fornecido pelo portal supracitado, utilizamos os arquivos do
+presente programa para extrair algumas informacoes sobre a velocidade e alterar
+as cores do mapa conforme nos aprouver.
+
+Atualmente, as cores estao definidas no proprio codigo, e nao podem ser
+escolhidas pelo usuario, mas esta funcionalidade pode ser implementada sem
+maiores problemas.
+
+O programa gera alguns arquivos de saida que serao utilizados para o tratamento
+dos dados e posterior utilizacao do proprio usuario.
+
+Como executar o programa:
+
+$ ./gerador.sh arq1.kml [arq2.kml [arq3.kml ]]
+
+
+No minimo um arquivo deve ser passado para que o programa execute
+corretamente. O programa ao receber arquivos como argumento, iniciara os
+calculos que encontrarao os valores especificos para cada cor, conforme as
+velocidades contidas no arquivo KML. 
+
+Caso mais de um arquivo seja passado como argumento, o programa fara os
+calculos considerando tanto os valores locais de velocidade para cada arquivo,
+quanto os valores globais; e a partir desses valores encontrara as cores
+correspondentes, considerano maximo e minimo globais.
+
