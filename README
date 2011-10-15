@@ -33,8 +33,8 @@ corretamente. O programa ao receber arquivos como argumento, iniciara os
 calculos que encontrarao os valores especificos para cada cor, conforme as
 velocidades contidas no arquivo KML. 
 
-Caso mais de um arquivo seja passado como argumento, o programa fara os
-calculos considerando tanto os valores locais de velocidade para cada arquivo,
-quanto os valores globais; e a partir desses valores encontrara as cores
-correspondentes, considerano maximo e minimo globais.
+Caso mais de um arquivo seja passado como argumento, o programa fara os calculos
+considerando tanto os valores locais de velocidade para cada arquivo, quanto os
+valores globais; e a partir desses valores encontrara (os codigos d)as cores
+correspondentes, considerando maximo e minimo globais.
 
