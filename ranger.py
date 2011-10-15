@@ -31,7 +31,6 @@ class Ranger(object):
 
         # Filling up color hex codes list:
         for i in range(len(self.speedList)):
-
             self.localSpeedColorCodes.append(int(((self.speedList[i]*255)/self.maxSpeed)))
 
 
@@ -50,7 +49,6 @@ class Ranger(object):
 
         # Filling up color hex codes list:
         for i in range(len(self.speedList)):
-
             self.globalSpeedColorCodes.append(int(((self.speedList[i]*255)/self.upperGlobalBoundary)))
 
 
@@ -59,9 +57,9 @@ class Ranger(object):
 
         # When argv size is 1:
         if (mode == 'local'):
-
             self.setMyLocalSpeedColors()
             self.outputFileFP.write("Local Mode. Colors considered locally\n")
+
             for i in range(len(self.speedList)):
 
                 # Into hex format:
@@ -74,11 +72,11 @@ class Ranger(object):
 
 
         elif (mode == 'global'):
-
             minSpeed = kwargs['minSpeed']
             maxSpeed = kwargs['maxSpeed']
             self.setMyGlobalSpeedColors(minSpeed, maxSpeed)
             self.outputFileFP.write("Global Mode. Colors considered globally\n")
+
             for i in range(len(self.speedList)):
 
                 # Into hex format:
@@ -90,3 +88,4 @@ class Ranger(object):
                 (self.speedList[i].__str__().replace('.',','),self.globalSpeedColorCodes[i],255-self.globalSpeedColorCodes[i]))
 
         self.outputFileFP.close()
+
