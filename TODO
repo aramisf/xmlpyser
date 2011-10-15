@@ -1,0 +1,9 @@
+No momento, intenta-se fazer o programa responsavel pela edicao do arquivo KML
+final, que contera as cores recalculadas pelo programa.
+
+Atualmente, o programa gera todas essas cores (e seus respectivos codigos), mas os arquivos KML finais ainda
+precisam ser editados manualemte.
+
+Ao final do desenvolvimento, deseja-se que os arquivos KML finais sejam editados
+automaticamente pelo programa.
+
