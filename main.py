@@ -27,30 +27,25 @@ def usage():
 def main():
 
     if (len(sys.argv) == 1):
-    
         usage()
         sys.exit(1)
 
-
     else:
-
         global mode
         # Setting mode to print info at the end:
         if (len(sys.argv) == 2):
-
             mode = 'local'
-        else:
 
+        else:
             mode = 'global'
 
 
         # Run through argv to take files and create the list
         for i in range(len(sys.argv)-1):
-    
             inputName = sys.argv[i+1]
+    
             # Using input to change output filenames.
             outputName = sub("\.input",".colorCodes",sys.argv[i+1])
-
             maps.append(Ranger(inputName, outputName))
 
 # Find global maximum value:
@@ -60,12 +55,12 @@ def setGlobalValues():
     minGlobal = []
 
     for i in range(len(maps)):
-
         maxGlobal.append(maps[i].maxSpeed)
         minGlobal.append(maps[i].minSpeed)
     
     global globalUpperBoundary
     global globalLowerBoundary
+
     globalUpperBoundary = max(maxGlobal)
     globalLowerBoundary = min(minGlobal)
 
@@ -73,7 +68,6 @@ def setGlobalValues():
 def printOutPut():
 
     for i in range(len(maps)):
-
         maps[i].about(mode, minSpeed = globalLowerBoundary, maxSpeed = globalUpperBoundary)
 
 # Starts here:
