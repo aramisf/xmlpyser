@@ -16,7 +16,7 @@ file = open(sys.argv[1],'r')
 #convert to string:
 data = file.readlines()
 
-#close file:
+#close file: 
 file.close()
 
 #parse the xml you got from the file
